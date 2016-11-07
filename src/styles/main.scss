@@ -32,5 +32,13 @@ header {
 }
 
 section {
- padding: 20px;
+  padding: 20px;
+}
+.entity {
+  padding: 1em;
+  border: 1px solid black;
+}
+.attributes {
+  padding: 1em;
+  background-color: #dedede;
 }
