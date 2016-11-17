@@ -55,7 +55,9 @@ class App extends React.Component {
           </span>
         </div>
         <section>
-          {this.state.store.map((entity, idx) => (<Entity key={idx} data={entity} />))}
+          {this.state.store.map(
+            (entity, idx) => (<Entity key={idx} data={entity} relName="Root element" />)
+          )}
         </section>
       </div>
     );
