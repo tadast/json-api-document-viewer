@@ -1,4 +1,5 @@
 import React from 'react';
+import Attributes from './Attributes';
 
 class Entity extends React.Component {
   componentWillMount() {
@@ -30,13 +31,7 @@ class Entity extends React.Component {
         <strong>{this.props.relName}</strong>
         <div>type: {this.props.data._type}</div>
         <div>id: {this.props.data.id}</div>
-        <div className="attributes">
-          {
-            this.state.attributes.map((attr, index) => (
-              <div key={index}>&nbsp;&nbsp;{attr}: {this.props.data[attr]}</div>
-            ))
-          }
-        </div>
+        <Attributes attributeNames={this.state.attributes} data={this.props.data} />
         <div>
           <strong>Relationships:</strong>
           {
