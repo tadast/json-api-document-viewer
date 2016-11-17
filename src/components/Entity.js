@@ -69,7 +69,6 @@ class Entity extends React.Component {
   }
 
   render() {
-    console.log('Will render: ', this.props);
     return (this.state.isExpanded ? this.expanded() : this.collapsed());
   }
 }
