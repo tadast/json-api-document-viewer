@@ -8,7 +8,7 @@ class App extends React.Component {
     this.setState({
       docString: JSON.stringify(this.props.doc, null, 2),
       store: store.sync(this.props.doc),
-      jsonState: 'valid'
+      jsonState: '✅'
     });
   }
 
@@ -28,11 +28,11 @@ class App extends React.Component {
 
       this.setState({
         store: arrayStore,
-        jsonState: 'valid'
+        jsonState: '✅'
       });
     } catch (e) {
       this.setState({
-        jsonState: `invalid ${e}`
+        jsonState: `❌ ${e}`
       });
     }
   }
@@ -48,7 +48,10 @@ class App extends React.Component {
           <label>{'{json:api}'} document:</label>
           <textarea onChange={(e) => this.handleChange(e)} value={this.state.docString} />
           <span className="state">
-            Current state: <strong>{this.state.jsonState}</strong>
+            <strong>JSON parse:</strong> {this.state.jsonState}
+          </span>
+          <span className="state">
+            <strong>{'{json:api}'} parse:</strong> not implemented yet
           </span>
         </div>
         <section>
