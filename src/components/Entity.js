@@ -28,9 +28,7 @@ class Entity extends React.Component {
   expanded() {
     return (
       <div className="entity">
-        <strong>{this.props.relName}</strong>
-        <div>type: {this.props.data._type}</div>
-        <div>id: {this.props.data.id}</div>
+        {this.overview()}
         <button onClick={() => this.collapse()}>Collapse</button>
         <Attributes attributeNames={this.state.attributes} data={this.props.data} />
         <div>
@@ -44,6 +42,18 @@ class Entity extends React.Component {
               ))
             ))
           }
+        </div>
+      </div>
+    );
+  }
+
+  overview() {
+    return (
+      <div>
+        <strong>{this.props.relName}</strong>
+        <div className="attributes">
+          <div>Type: {this.props.data._type}</div>
+          <div>ID: {this.props.data.id}</div>
         </div>
       </div>
     );
@@ -64,9 +74,7 @@ class Entity extends React.Component {
   collapsed() {
     return (
       <div className="entity">
-        <strong>{this.props.relName}</strong>
-        <div>type: {this.props.data._type}</div>
-        <div>id: {this.props.data.id}</div>
+        {this.overview()}
         <button onClick={() => this.expand()}>Expand</button>
       </div>
     );

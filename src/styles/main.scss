@@ -35,12 +35,26 @@ section {
   padding: 1em;
 }
 .entity {
+  margin-top: 2px;
   padding: 0.5em;
-  border: 1px solid #555;
+  border: 1px solid #a7b6bd;
 }
 .attributes {
   padding: 0.5em;
-  background-color: #eee;
+  div {
+    border-bottom: 1px solid #ddd;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    &:first-child {
+      border-top: 1px solid #ddd;
+    }
+    &:nth-child(odd) {
+      background-color: #d9edf7;
+    }
+    &:nth-child(even) {
+      background-color: #fbfae8;
+    }
+  }
 }
 .json-input {
   margin: 1em;
