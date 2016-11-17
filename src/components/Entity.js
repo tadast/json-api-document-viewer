@@ -37,7 +37,9 @@ class Entity extends React.Component {
           <strong>Relationships:</strong>
           {
             this.state.relationships.map((relationshipName, idx) => (
-              this.ensureArray(this.props.data[relationshipName]).map((relationship, index) => (
+              this.ensureArray(this.props.data[relationshipName]).filter(
+                (e) => (e)
+              ).map((relationship, index) => (
                 <Entity key={`${idx}-${index}`} data={relationship} relName={relationshipName} />
               ))
             ))
