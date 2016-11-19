@@ -44,20 +44,25 @@ class App extends React.Component {
         <header>
           <h1>{'{json:api}'} document viewer</h1>
         </header>
-        <div className="json-input">
-          <label>{'{json:api}'} document:</label>
-          <textarea onChange={(e) => this.handleChange(e)} value={this.state.docString} />
-          <span className="state">
-            <strong>JSON parse:</strong> {this.state.jsonState}
-          </span>
-          <span className="state">
-            <strong>{'{json:api}'} parse:</strong> not implemented yet
-          </span>
-        </div>
         <section>
-          {this.state.store.map(
-            (entity, idx) => (<Entity key={idx} data={entity} relName="Root element" />)
-          )}
+          <div className="json-input half-floater">
+            <div className="form-info form-header">{'{json:api}'} document:</div>
+            <textarea onChange={(e) => this.handleChange(e)} value={this.state.docString} />
+            <div className="form-info form-footer">
+              <span className="state">
+                <strong>JSON validity:</strong> {this.state.jsonState}
+              </span>
+              <span className="state">
+                <strong>{'{json:api}'} validity:</strong> ??? (not implemented yet)
+              </span>
+            </div>
+          </div>
+          <div className="json-visualisation half-floater">
+            <div className="form-info form-header">Document tree</div>
+            {this.state.store.map(
+              (entity, idx) => (<Entity key={idx} data={entity} relName="Root element" />)
+            )}
+          </div>
         </section>
       </div>
     );
